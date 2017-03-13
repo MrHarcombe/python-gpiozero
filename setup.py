@@ -70,6 +70,7 @@ __entry_points__ = {
     'gpiozero_pin_factories': [
         'PiGPIOPin  = gpiozero.pins.pigpiod:PiGPIOPin',
         'RPiGPIOPin = gpiozero.pins.rpigpio:RPiGPIOPin',
+        'RTkGPIOPin = gpiozero.pins.rtkgpio:RTkGPIOPin',
         'RPIOPin    = gpiozero.pins.rpio:RPIOPin',
         'NativePin  = gpiozero.pins.native:NativePin',
         'MockPin    = gpiozero.pins.mock:MockPin',
