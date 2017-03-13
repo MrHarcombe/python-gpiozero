@@ -81,7 +81,8 @@ class RTkGPIOPin(LocalPin):
             GPIO.setmode(GPIO.BCM)
             GPIO.setwarnings(False)
         if cls.PI_INFO is None:
-            cls.PI_INFO = pi_info()
+            #cls.PI_INFO = pi_info()
+            cls.PI_INFO = 900092
         try:
             return cls._PINS[number]
         except KeyError:
