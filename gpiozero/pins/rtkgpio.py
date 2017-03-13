@@ -81,7 +81,7 @@ class RTkGPIOPin(LocalPin):
             GPIO.setmode(GPIO.BCM)
             GPIO.setwarnings(False)
         if cls.PI_INFO is None:
-            cls.PI_INFO = pi_info(900092)
+            cls.PI_INFO = pi_info("900092")
             #Fake a Pi Zero 1.2, Closest device as just has GPIO Pins and no camera.
             #cls.PI_INFO = 900092
         try:
