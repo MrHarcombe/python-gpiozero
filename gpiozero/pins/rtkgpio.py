@@ -82,11 +82,12 @@ class RTkGPIOPin(LocalPin):
             GPIO.setwarnings(False)
         if cls.PI_INFO is None:
             #cls.PI_INFO = pi_info()
+            #Fake a Pi Zero 1.2, Closest device as just has GPIO Pins and no camera.
             cls.PI_INFO = 900092
         try:
             return cls._PINS[number]
         except KeyError:
-            self = super(RPiGPIOPin, cls).__new__(cls)
+            self = super(RTkGPIOPin, cls).__new__(cls)
             try:
                 cls.PI_INFO.physical_pin('GPIO%d' % number)
             except PinNoPins:
