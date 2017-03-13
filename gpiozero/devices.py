@@ -53,7 +53,7 @@ def _default_pin_factory(name=os.getenv('GPIOZERO_PIN_FACTORY', None)):
             try:
                 return pkg_resources.load_entry_point(dist, group, name)
             except ImportError:
-                pass
+                print(ImportError)
         raise BadPinFactory('Unable to locate any default pin factory!')
     else:
         for factory in pkg_resources.iter_entry_points(group, name):
