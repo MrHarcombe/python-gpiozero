@@ -49,7 +49,7 @@ def _default_pin_factory(name=os.getenv('GPIOZERO_PIN_FACTORY', None)):
         # no third-party libraries are available, however, we fall back to a
         # pure Python implementation which supports platforms like PyPy
         dist = pkg_resources.get_distribution('gpiozero')
-        for name in ('RPiGPIOPin', 'RPIOPin', 'PiGPIOPin', 'NativePin'):
+        for name in ('RPiGPIOPin', 'RPIOPin', 'PiGPIOPin', 'RTkGPIOPin', 'NativePin'):
             try:
                 return pkg_resources.load_entry_point(dist, group, name)
             except ImportError:
@@ -440,4 +440,3 @@ class GPIODevice(Device):
                 self.__class__.__name__, self.pin, self.is_active)
         except DeviceClosed:
             return "<gpiozero.%s object closed>" % self.__class__.__name__
-
